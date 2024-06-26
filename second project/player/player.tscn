@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://caupctbhuan43"]
+
+[ext_resource type="Script" path="res://Area2D.gd" id="1_v2uge"]
+[ext_resource type="Texture2D" uid="uid://bgu1wmafaumnv" path="res://player/run/player-run1.png" id="2_thdrw"]
+[ext_resource type="Texture2D" uid="uid://c4678r1d8cep8" path="res://player/run/player-run2.png" id="3_6vf2x"]
+[ext_resource type="Texture2D" uid="uid://deodl45ud4uik" path="res://player/run/player-run3.png" id="4_rlxik"]
+[ext_resource type="Texture2D" uid="uid://bsxurvtgatid4" path="res://player/run/player-run4.png" id="5_d664g"]
+[ext_resource type="Texture2D" uid="uid://cc4k18r8bfskc" path="res://player/run/player-run5.png" id="6_2mcqa"]
+[ext_resource type="Texture2D" uid="uid://bdb4hc37qrofu" path="res://player/run/player-run6.png" id="7_tgyrx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7dpr"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_thdrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6vf2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rlxik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d664g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2mcqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tgyrx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="Main" type="Node2D"]
+
+[node name="player" type="Area2D" parent="."]
+script = ExtResource("1_v2uge")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player"]
+polygon = PackedVector2Array(276, 85, 304, 130, 304, 159, 284, 156, 286, 193, 229, 245, 232, 288, 276, 299, 289, 287, 290, 297, 268, 314, 263, 344, 271, 362, 320, 370, 341, 346, 364, 335, 423, 376, 443, 376, 470, 337, 469, 292, 430, 284, 479, 270, 473, 210, 435, 195, 424, 219, 423, 58, 409, 53, 384, 79, 342, 78, 313, 46)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+position = Vector2(354, 184)
+scale = Vector2(8.5625, 9.31579)
+sprite_frames = SubResource("SpriteFrames_g7dpr")
+animation = &"run"
+frame = 5
+frame_progress = 0.177725
